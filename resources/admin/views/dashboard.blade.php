@@ -1,5 +1,8 @@
 @extends('layouts.default')
 
+@section('title')
+Admin | Dashboard
+@endsection
 @section('content')
 <div class="container-fluid">
 
@@ -11,13 +14,13 @@
                 <!-- small card -->
                   <div class="small-box bg-warning">
                     <div class="inner">
-                      <h3>0</h3>
+                      <h3>{{$totalUsers}}</h3>
                         <p>Users</p>
                       </div>
                       <div class="icon">
                 <i class="fas fa-user-plus"></i>
               </div>
-              <a href="#" class="small-box-footer">
+              <a href="{{url('admin/users')}}" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -27,14 +30,14 @@
             <!-- small card -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>0<sup style="font-size: 20px">%</sup></h3>
+                <h3>{{$totalProducts}}<sup style="font-size: 20px">%</sup></h3>
 
                 <p>Products</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">
+              <a href="{{url('admin/product')}}" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>

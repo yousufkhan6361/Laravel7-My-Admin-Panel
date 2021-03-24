@@ -5,12 +5,21 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Logo;
+use App\User;
+use App\Product;
 
 class DashboardController extends Controller
 {
     public function initContent(){
 
-    	return view('dashboard');
+
+        $users = User::all();
+        $totalUsers = count($users);
+
+        $products = Product::all();
+        $totalProducts = count($products);
+       // dd($totalUsers);
+    	return view('dashboard')->with('totalUsers',$totalUsers)->with('totalProducts',$totalProducts);
     }
 
 
