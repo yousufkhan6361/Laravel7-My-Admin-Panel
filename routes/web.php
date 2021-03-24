@@ -92,7 +92,10 @@ Route::get('show-gallery/{id}',['as'=>'show.gallery', 'uses'=> 'ProductControlle
 Route::post('upload-images','ProductController@storeImages')->name('upload.images');
 Route::get('gallery/delete/{id}' , ['as' => 'gallery.delete' , 'uses' => 'ProductController@galleryDestroy']);
 
-//Route::get('product');
+// Inquiry and newsletter section routes
+Route::get('show-inquiries','InquiryController@showInquiries');
+Route::get('delete/inquiry/{id}',['as'=>'delete.inquiry', 'uses'=>'InquiryController@destroy']);
+Route::post('get/Inquiry','InquiryController@getInquiryData');
 
 Route::post('dropzone/upload', 'DashboardController@upload')->name('dropzone.upload');
 Route::get('dropzone/fetch', 'DashboardController@fetch')->name('dropzone.fetch');

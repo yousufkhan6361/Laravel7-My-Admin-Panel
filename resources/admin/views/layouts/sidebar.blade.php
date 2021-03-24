@@ -146,7 +146,7 @@
 
           <li class="nav-header">Inquiries Section</li>
           
-          <li class="nav-item">
+          <li class="nav-item <?php if(Request::segment(2) == "show-inquiries"){ ?> active <?php } ?>">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-folder-open"></i>
               <p>
@@ -156,7 +156,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('admin/show-inquiries')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inquiries list</p>
                 </a>

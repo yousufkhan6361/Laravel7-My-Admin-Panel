@@ -161,6 +161,10 @@
 <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 
 <script src="{{asset('adminTheme/dist/js/my_custom.js')}}"></script>
+
+<script type="text/javascript">
+var APP_URL = {!! json_encode(url('/')) !!};
+</script>
 @stack('footer-scripts')
 
   
