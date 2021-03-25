@@ -67,14 +67,14 @@ Admin | Dashboard
             <!-- small card -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>0</h3>
+                <h3>{{$totalInquiries}}</h3>
 
                 <p>New Inquiries</p>
               </div>
               <div class="icon">
                 <i class="fas fa-chart-pie"></i>
               </div>
-              <a href="#" class="small-box-footer">
+              <a href="{{url('admin/show-inquiries')}}" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>

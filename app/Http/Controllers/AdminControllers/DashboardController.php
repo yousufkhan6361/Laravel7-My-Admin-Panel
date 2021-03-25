@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Logo;
 use App\User;
 use App\Product;
+use App\Inquiry;
+use DB;
 
 class DashboardController extends Controller
 {
@@ -18,8 +20,18 @@ class DashboardController extends Controller
 
         $products = Product::all();
         $totalProducts = count($products);
+
+        // $inquiries = Inquiry::all();
+        // $totalInquiries = count($inquiries);
+
+        $inquiries = DB::select('select * from inquiries');
+        $totalInquiries = count($inquiries);
+
         //dd($totalProducts);
-    	return view('dashboard')->with('totalUsers',$totalUsers)->with('totalProducts',$totalProducts);
+    	return view('dashboard')
+        ->with('totalUsers',$totalUsers)
+        ->with('totalProducts',$totalProducts)
+        ->with('totalInquiries',$totalInquiries);
     }
 
 
