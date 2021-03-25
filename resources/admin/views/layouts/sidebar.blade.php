@@ -161,12 +161,19 @@
                   <p>Inquiries list</p>
                 </a>
               </li>
+
+              <!-- <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Newsletters list</p>
+                </a>
+              </li> -->
               
             </ul>
           </li>
 
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-folder-open"></i>
               <p>
@@ -183,7 +190,7 @@
               </li>
               
             </ul>
-          </li>
+          </li> -->
 
           <li class="nav-header">Admin Section</li>
           <li class="nav-item">

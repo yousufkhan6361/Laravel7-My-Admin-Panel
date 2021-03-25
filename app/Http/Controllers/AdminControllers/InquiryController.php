@@ -33,4 +33,11 @@ class InquiryController extends Controller
         //dd($data);
 
     }
+
+    // public function showNewsletters(){
+        
+    //     $inquiries = Inquiry::all();
+    //     // dd($inquiries);
+    //     return view('showInquiryDetail',compact('inquiries'));
+    // }
 }

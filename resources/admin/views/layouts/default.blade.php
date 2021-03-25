@@ -10,7 +10,7 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('adminTheme/plugins/fontawesome-free/css/all.min.css') }} ">
 
-
+  <link rel="stylesheet" href="{{ asset('adminTheme/plugins/ekko-lightbox/ekko-lightbox.css') }}">
 
   <!-- IonIcons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -127,6 +127,9 @@
 <!-- Bootstrap -->
 <script src="{{asset('adminTheme/plugins/bootstrap/js/bootstrap.bundle.min.js')}} "></script>
 
+
+<script src="{{asset('adminTheme/plugins/ekko-lightbox/ekko-lightbox.min.js')}}"></script>
+
 <script src="{{asset('adminTheme/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('adminTheme/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{asset('adminTheme/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
@@ -163,9 +166,11 @@
 <script src="{{asset('adminTheme/dist/js/my_custom.js')}}"></script>
 
 <script type="text/javascript">
-var APP_URL = {!! json_encode(url('/')) !!};
+// var APP_URL = {!! json_encode(url('/')) !!};
 </script>
 @stack('footer-scripts')
+
+
 
   
 </body>

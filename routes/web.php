@@ -41,10 +41,11 @@ Route::get('test', 'PageController@index');
 // Routes For Admin 
 Route::group(['prefix' => 'admin'], function () {
 
-	Route::get('', function () {
-		return view('dashboard');
-	});
+	// Route::get('', function () {
+	// 	return view('dashboard');
+	// });
 
+Route::get('', 'DashboardController@initContent');
 Route::get('dashboard', 'DashboardController@initContent'); //This will resoluve AdminControllers\DashboardController file
 Route::get('logo', 'LogoController@addlogo');
 Route::post('logo/upload', 'LogoController@update_logo')->name('logo.upload');
@@ -96,6 +97,7 @@ Route::get('gallery/delete/{id}' , ['as' => 'gallery.delete' , 'uses' => 'Produc
 Route::get('show-inquiries','InquiryController@showInquiries');
 Route::get('delete/inquiry/{id}',['as'=>'delete.inquiry', 'uses'=>'InquiryController@destroy']);
 Route::post('get/Inquiry','InquiryController@getInquiryData');
+
 
 Route::post('dropzone/upload', 'DashboardController@upload')->name('dropzone.upload');
 Route::get('dropzone/fetch', 'DashboardController@fetch')->name('dropzone.fetch');

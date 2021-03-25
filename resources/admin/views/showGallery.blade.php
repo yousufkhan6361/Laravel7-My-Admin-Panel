@@ -69,7 +69,11 @@
                   	@foreach($products as $product)
                     <tr>
                     <td>{{$product->id}}</td>
-                    <td><img style="width:100px;height:100px;object-fit: cover;" src="{{asset('/adminTheme/uploads/product')}}/{{$product->image}}"></td>
+                    <td>
+                    <a href="{{asset('/adminTheme/uploads/product')}}/{{$product->image}}" data-toggle="lightbox">
+                      <img style="width:100px;height:100px;object-fit: cover;" class="img-fluid mb-2" src="{{asset('/adminTheme/uploads/product')}}/{{$product->image}}">
+                    </a>
+                    </td>
                     <td>
                         <a href="{{route('gallery.delete',['id'=>$product->id])}}">
                           <button type="button" class="btn btn-danger">Delete </button>
@@ -99,3 +103,9 @@
         </div>
 
 @endsection
+
+@push('footer-scripts')
+<script type="text/javascript">
+$('#myLightbox').lightbox(options)
+</script>
+@endpush

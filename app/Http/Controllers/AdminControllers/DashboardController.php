@@ -18,12 +18,9 @@ class DashboardController extends Controller
 
         $products = Product::all();
         $totalProducts = count($products);
-       // dd($totalUsers);
+        //dd($totalProducts);
     	return view('dashboard')->with('totalUsers',$totalUsers)->with('totalProducts',$totalProducts);
     }
-
-
-    
 
 
 
