@@ -254,7 +254,9 @@ class CountriesTableSeeder extends Seeder
 	    $countries[] = "Zimbabwe,ZW,ZWD,Dollar";
 
 	    DB::table( 'countries' )->truncate();
+
 	    foreach ($countries as $country) {
+			
 		    list($title, $code, $currency_code, $currency_name) = explode(",", $country);
 		    DB::table( 'countries' )->insert(
 			    [

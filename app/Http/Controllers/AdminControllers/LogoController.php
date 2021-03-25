@@ -36,12 +36,24 @@ class LogoController extends Controller
 		    	$path = public_path().'/adminTheme/uploads/logo';
                 $path2 = '/adminTheme/uploads/logo';
 		    	$image->move($path, $imageName);
-		    	//$Logo = Logo::find(1);
+		    	
+                $Logo = Logo::find(1);
+                if($Logo == NULL){
 
-		    	Logo::where('id', '=', 1)->update([
-		    		'image' => $imageName,
-		    		'path' => $path2
-		    	]);
+                    $logoResult = Logo::create([
+                        'image' => $imageName,
+                        'path' => $path2
+                    ]);
+
+                }else{
+                    Logo::where('id', '=', 1)->update([
+                        'image' => $imageName,
+                        'path' => $path2
+                    ]);
+
+                }
+
+		    	
 
        		return back()
                 ->with('success','Image Uploaded Successfully');
