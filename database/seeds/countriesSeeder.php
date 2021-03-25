@@ -1,16 +1,12 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
-class CountriesTableSeeder extends Seeder
+class countriesSeeder extends Seeder
 {
-	
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+   
     public function run()
     {
         $countries = array();
@@ -253,7 +249,7 @@ class CountriesTableSeeder extends Seeder
 	    $countries[] = "Zambia,ZM,ZMK,Kwacha";
 	    $countries[] = "Zimbabwe,ZW,ZWD,Dollar";
 
-	    DB::table( 'countries' )->truncate();
+        DB::table( 'countries' )->truncate();
 
 	    foreach ($countries as $country) {
 			
@@ -270,6 +266,5 @@ class CountriesTableSeeder extends Seeder
 			    ]
 		    );
 	    }
-
     }
 }
