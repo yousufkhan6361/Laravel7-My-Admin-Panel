@@ -64,7 +64,6 @@ class CategoryController extends Controller
 
         public function destroy($id)
     {
-
        $category = Category::find($id);
        $category->delete();
        session::flash('success','Record has been deleted Successfully');
