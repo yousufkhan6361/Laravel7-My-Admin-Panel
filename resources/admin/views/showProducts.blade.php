@@ -19,7 +19,7 @@
             </h3>
             <?php $pageLink = 'admin/'.Request::segment(2).'/add-content'; ?>
             <a href="{{url('admin/add-product')}}">
-             <div style="text-align: right;"><button class="btn btn-primary">Add <?=$pg?></button></div>
+             <div style="text-align: right;"><button class="btn btn-dark btn-sm">Add <?=$pg?></button></div>
             </a>
 
           </div>
@@ -65,10 +65,10 @@
                     <td><img style="width:100px;" src="{{asset('/adminTheme/uploads/product')}}/{{$product->image}}"></td>
                     <td>
                       
-                        <a href="{{route('product.edit',['id'=>$product->id])}}"><i style="color: green;" class="fa fa-pencil-alt"></i></a> |
+                        <a href="{{route('product.edit',['id'=>$product->id])}}"><i style="color: #c49f47;" class="fas fa-pen-square"></i></a> |
                         <a href="{{route('product.delete',['id'=>$product->id])}}"><i style="color: #bd0a0a;" class="fa fa-trash" aria-hidden="true">
                         </i></a>  | 
-                        <a href="{{route('show.gallery',['id' => $product->id])}}"><i style="color: #bd0a0a;" class="fa fa-image" aria-hidden="true"></i></a> 
+                        <a href="{{route('show.gallery',['id' => $product->id])}}"><i style="color: #007bff;" class="fa fa-image" aria-hidden="true"></i></a> 
 
                     </td>
                     </tr>

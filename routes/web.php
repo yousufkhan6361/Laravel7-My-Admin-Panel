@@ -59,12 +59,16 @@ Route::post('cms-update/{id}' , ['as' => 'cms.update' , 'uses' => 'HomePageContr
 Route::get('home/delete/{id}' , ['as' => 'home.delete' , 'uses' => 'HomePageController@destroy']);
 
 //About section content routes
-Route::get('about', 'HomePageController@index');
+Route::get('about', 'HomePageController@about');
 Route::get('about/add-content', 'HomePageController@create');
+Route::get('about/edit/{id}',['as'=>'about.edit', 'uses'=>'HomePageController@aboutEdit']);
+Route::get('about/delete/{id}' , ['as' => 'about.delete' , 'uses' => 'HomePageController@aboutDestroy']);
 
 //Contact page content routes
-Route::get('contact', 'HomePageController@index');
+Route::get('contact', 'HomePageController@contact');
 Route::get('contact/add-content', 'HomePageController@create');
+Route::get('contact/edit/{id}',['as'=>'contact.edit', 'uses'=>'HomePageController@contactEdit']);
+Route::get('contact/delete/{id}' , ['as' => 'contact.delete' , 'uses' => 'HomePageController@contactDestroy']);
 
 //Users section content routes
 Route::get('users','UserController@showView');

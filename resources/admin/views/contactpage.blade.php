@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-  Admin | Category Pages
+  Admin | Cms Pages
 @endsection
 
 @section('content')
@@ -18,8 +18,8 @@
               <?=$pg?> Add Details to <?=$pg?> Page
             </h3>
             <?php $pageLink = 'admin/'.Request::segment(2).'/add-content'; ?>
-            <a href="{{url('admin/add-category')}}">
-             <div style="text-align: right;"><button class="btn btn-dark btn-sm">Add <?=$pg?></button></div>
+            <a href="{{url($pageLink)}}">
+             <div style="text-align: right;"><button class="btn btn-dark btn-sm">Add Content</button></div>
             </a>
 
           </div>
@@ -46,30 +46,34 @@
                 <h3 class="card-title">Home Page Data</h3>
               </div> -->
               <!-- /.card-header -->
-    
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>Id</th>
-                    <th>Category Name</th>
-                    <!-- <th>Title</th>
-                    <th>Content</th> -->
+                    <th>Page Name</th>
+                    <th>Title</th>
+                    <th>Content</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                  	@foreach($category as $cat)
-                    <tr>
-                    <td>{{$cat->id}}</td>
-                    <td>{{$cat->category_name}}</td>
-                    <td>
-                      
-                        <a href="{{route('category.edit',['id' => $cat->id])}}"><i style="color: #c49f47;" class="fas fa-pen-square"></i></a> |
-                        <a href="{{route('category.delete' , ['id' => $cat->id])}}"><i style="color: #bd0a0a;" class="fa fa-trash" aria-hidden="true"></i></a> 
+                  	@foreach($contactdata as $contact)
 
-                    </td>
-                    </tr>
+                    <?php $content = strip_tags($contact->content); ?>
+	                  <tr>
+                      <td>{{$contact->id}}</td>
+	                    <td>{{$contact->pagename}}</td>
+	                    <td>{{$contact->pagetitle}}</td>
+	                    <td>{{$content}}</td>
+	                    
+	                    <td>
+	                    	<!-- <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a> | -->
+	                    	<a href="{{route('contact.edit',['id' => $contact->id])}}"><i style="color: #c49f47;" class="fas fa-pen-square"></i></a> |
+	                    	<a href="{{route('contact.delete' , ['id' => $contact->id])}}"><i style="color: #bd0a0a;" class="fa fa-trash" aria-hidden="true"></i></a> 
+
+	                    </td>
+	                  </tr>
                   	@endforeach
                   
                   </tbody>

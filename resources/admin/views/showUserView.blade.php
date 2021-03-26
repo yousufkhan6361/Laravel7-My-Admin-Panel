@@ -19,7 +19,7 @@
             </h3>
             <?php //$pageLink = 'admin/'.Request::segment(2).'/add-content'; ?>
             <a href="user/add-user">
-             <div style="text-align: right;"><button class="btn btn-primary">Add User</button></div>
+             <div style="text-align: right;"><button class="btn btn-dark btn-sm">Add User</button></div>
             </a>
 
           </div>
@@ -70,7 +70,7 @@
                       
                       <td>
                         <!-- <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a> | -->
-                        <a href="{{route('user.edit',['id' => $home->id])}}"><i style="color: green;" class="fa fa-pencil-alt"></i></a> |
+                        <a href="{{route('user.edit',['id' => $home->id])}}"><i style="color: #c49f47;" class="fas fa-pen-square"></i></a> |
                         <a href="{{route('user.delete' , ['id' => $home->id])}}"><i style="color: #bd0a0a;" class="fa fa-trash" aria-hidden="true"></i></a> 
 
                       </td>

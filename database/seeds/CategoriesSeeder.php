@@ -24,9 +24,9 @@ class CategoriesSeeder extends Seeder
 
         DB::table('categories')->insert([
 
-            'category_name'  => $categoryName,
+            'category_name' => $categoryName,
             'slug' => Str::slug($categoryName),
-            'category_status'      => 1,
+            'category_status' => 1,
         ]);
         
       }

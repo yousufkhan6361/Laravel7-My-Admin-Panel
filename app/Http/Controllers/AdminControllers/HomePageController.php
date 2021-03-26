@@ -4,6 +4,7 @@ namespace App\Http\Controllers\AdminControllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\cms;
 use Session;
 
@@ -21,8 +22,26 @@ class HomePageController extends Controller
   
     public function index()
     {
-        $homedata = cms::all();
+        //$homedata = cms::all();
+
+        $homedata = DB::table('cms')->where('pagename','home')->get();
         return view('homepage',compact('homedata'));
+    }
+
+    public function about()
+    {
+        //$homedata = cms::all();
+
+        $aboutpage = DB::table('cms')->where('pagename','about')->get();
+        return view('aboutpage',compact('aboutpage'));
+    }
+
+    public function contact()
+    {
+        //$homedata = cms::all();
+
+        $contactdata = DB::table('cms')->where('pagename','contact')->get();
+        return view('contactpage',compact('contactdata'));
     }
 
   
@@ -36,9 +55,14 @@ class HomePageController extends Controller
     public function store(Request $request)
     {
 
+        $uriSegment = $request->input('url');
+        //dd($uriSegment);
+
        $this->addContent($request);
+
        session::flash('success','Record Uploaded Successfully');
-       return redirect('admin/home')->with('success','Record Uploaded Successfully');
+
+       return redirect('admin/'.$uriSegment)->with('success','Record Uploaded Successfully');
     }
 
  
@@ -53,9 +77,22 @@ class HomePageController extends Controller
 
         //dd($id);
         $cms = cms::find($id);
-
         return view('cmsedit',compact('cms'));
-        
+    }
+
+   
+    public function aboutEdit($id)
+    {
+        //dd($id);
+        $cms = cms::find($id);
+        return view('cmsedit',compact('cms'));
+    }
+
+    public function contactEdit($id)
+    {
+        //dd($id);
+        $cms = cms::find($id);
+        return view('cmsedit',compact('cms'));
     }
 
    
@@ -162,6 +199,27 @@ class HomePageController extends Controller
        $cms->delete();
        session::flash('success','Record has been deleted Successfully');
        return redirect('admin/home');
+        
+    }
+
+    
+    public function aboutDestroy($id)
+    {
+
+       $cms = cms::find($id);
+       $cms->delete();
+       session::flash('success','Record has been deleted Successfully');
+       return redirect('admin/about');
+        
+    }
+
+    public function contactDestroy($id)
+    {
+
+       $cms = cms::find($id);
+       $cms->delete();
+       session::flash('success','Record has been deleted Successfully');
+       return redirect('admin/contact');
         
     }
 

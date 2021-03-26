@@ -65,6 +65,7 @@
                   <div class="form-group">
                     <label for="exampleInputEmail1">Page Name</label>
                     <input type="text" class="form-control" name="pagename" id="exampleInputEmail1" readonly value="{{ Request::segment(2) }}" placeholder="Page Name">
+                    <input type="hidden" name="url" value="{{REQUEST::segment(2)}}">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Title</label>
