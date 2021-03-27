@@ -47,6 +47,37 @@
               </p>
             </a>
           </li>
+          
+
+          <li class="nav-header">Banner Section</li>
+          <li class="nav-item <?php if(Request::segment(2) == "slider" || Request::segment(2) == "add-slider" || Request::segment(2) == "banner" || Request::segment(2) == "add-banner"){ ?> menu-is-opening menu-open <?php } ?>">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-folder-open"></i>
+              <p>
+                Manage Banner
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('admin/slider')}}" class="nav-link <?php if(Request::segment(2) == "slider" || Request::segment(2) == "add-slider"){ ?> active <?php } ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Home Page Slider</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{url('admin/banner')}}" class="nav-link <?php if(Request::segment(2) == "banner" || Request::segment(2) == "add-banner"){ ?> active <?php } ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Inner Banner</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+
+
+          <li class="nav-header">Pages Section</li>
           <li class="nav-item <?php if(Request::segment(2) == "home" || Request::segment(2) == "about" || Request::segment(2) == "contact"){ ?> menu-is-opening menu-open <?php } ?>">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
@@ -141,12 +172,9 @@
             </ul>
           </li>
 
-
-          
-
           <li class="nav-header">Inquiries Section</li>
           
-          <li class="nav-item <?php if(Request::segment(2) == "show-inquiries"){ ?> active <?php } ?>">
+          <li class="nav-item<?php if(Request::segment(2) == "show-inquiries"){ ?> menu-is-opening menu-open <?php } ?>">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-folder-open"></i>
               <p>
@@ -156,7 +184,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('admin/show-inquiries')}}" class="nav-link">
+                <a href="{{url('admin/show-inquiries')}}" class="nav-link <?php if(Request::segment(2) == "show-inquiries"){ ?> active <?php } ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inquiries list</p>
                 </a>

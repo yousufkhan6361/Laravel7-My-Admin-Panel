@@ -45,6 +45,22 @@ Route::group(['prefix' => 'admin'], function () {
 	// 	return view('dashboard');
 	// });
 
+//Banner section routes
+Route::get('slider','BannerController@index');
+Route::get('add-slider','BannerController@show');
+Route::post('slider-store','BannerController@store')->name('slider.store');
+Route::get('slider/edit/{id}',['as'=>'slider.edit','uses'=>'BannerController@edit']);
+Route::post('slider-update/{id}' , ['as' => 'slider.update' , 'uses' => 'BannerController@update']);
+Route::get('slider/delete/{id}' , ['as' => 'slider.delete' , 'uses' => 'BannerController@destroy']);
+
+// InnerBanner section routes
+Route::get('banner','InnerBannerController@index');
+Route::get('add-banner','InnerBannerController@show');
+Route::post('banner-store','InnerBannerController@store')->name('banner.store');
+Route::get('banner/edit/{id}',['as'=>'banner.edit','uses'=>'InnerBannerController@edit']);
+Route::post('banner-update/{id}' , ['as' => 'banner.update' , 'uses' => 'InnerBannerController@update']);
+Route::get('banner/delete/{id}' , ['as' => 'banner.delete' , 'uses' => 'InnerBannerController@destroy']);
+
 Route::get('', 'DashboardController@initContent');
 Route::get('dashboard', 'DashboardController@initContent'); //This will resoluve AdminControllers\DashboardController file
 Route::get('logo', 'LogoController@addlogo');

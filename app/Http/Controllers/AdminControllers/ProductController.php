@@ -60,10 +60,10 @@ class ProductController extends Controller
 
     public function edit($id){
 
-                $product = Product::find($id);
-                $category = Category::all();
-            // dd($category);
-                return view('productEdit')->with('product', $product)->with('category', $category);
+        $product = Product::find($id);
+        $category = Category::all();
+        // dd($category);
+        return view('productEdit')->with('product', $product)->with('category', $category);
     }
 
     public function update(Request $request, $id)
