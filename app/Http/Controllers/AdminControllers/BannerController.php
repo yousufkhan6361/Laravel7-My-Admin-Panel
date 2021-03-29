@@ -107,7 +107,7 @@ class BannerController extends Controller
    
     public function destroy($id)
     {
-        $slider = Slider::find($id);
+       $slider = Slider::find($id);
        $slider->delete();
        session::flash('success','Record has been deleted Successfully');
        return redirect('admin/slider');
