@@ -34,10 +34,20 @@
           </li>
 
 
+          <!-- <li class="nav-header">Site Layout Section</li> -->
+          
           <li class="nav-header">Site Layout Section</li>
+          <li class="nav-item <?php if(Request::segment(2) == "slider" || Request::segment(2) == "add-slider" || Request::segment(2) == "banner" || Request::segment(2) == "add-banner" || Request::segment(2) == "logo"){ ?> menu-is-opening menu-open <?php } ?>">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-folder-open"></i>
+              <p>
+                Manage Logo\Banners
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
 
-
-          <li class="nav-item">
+            <li class="nav-item">
             <a href="{{url('admin/logo')}}" class="nav-link <?php if(Request::segment(2) == "logo"){ ?> active <?php } ?> ">
               <i class="nav-icon fas fa-image"></i>
 
@@ -47,18 +57,7 @@
               </p>
             </a>
           </li>
-          
 
-          <li class="nav-header">Banner Section</li>
-          <li class="nav-item <?php if(Request::segment(2) == "slider" || Request::segment(2) == "add-slider" || Request::segment(2) == "banner" || Request::segment(2) == "add-banner"){ ?> menu-is-opening menu-open <?php } ?>">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-folder-open"></i>
-              <p>
-                Manage Banner
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{url('admin/slider')}}" class="nav-link <?php if(Request::segment(2) == "slider" || Request::segment(2) == "add-slider"){ ?> active <?php } ?>">
                   <i class="far fa-circle nav-icon"></i>
@@ -75,7 +74,6 @@
               
             </ul>
           </li>
-
 
           <li class="nav-header">Pages Section</li>
           <li class="nav-item <?php if(Request::segment(2) == "home" || Request::segment(2) == "about" || Request::segment(2) == "contact"){ ?> menu-is-opening menu-open <?php } ?>">
@@ -110,30 +108,7 @@
             </ul>
           </li>
 
-          <li class="nav-header">Users Section</li>
-
-          <li class="nav-item <?php if(Request::segment(2) == "users" || Request::segment(2) == "user"){ ?> menu-is-opening menu-open <?php } ?>">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
-              <p>
-                Manage Users
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('admin/users')}}" class="nav-link <?php if(Request::segment(2) == "users"){ ?> active <?php } ?>">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Users list</p>
-                </a>
-              </li>
-              
-            </ul>
-          </li>
-
           <li class="nav-header">Product Section</li>
-          
-
           <li class="nav-item <?php if(Request::segment(2) == "product" || Request::segment(2) == "add-product" || Request::segment(2) == "show-gallery" || Request::segment(2) == "category"){ ?> menu-is-opening menu-open <?php } ?>">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-folder-open"></i>
@@ -159,8 +134,27 @@
             </ul>
           </li>
 
+          <li class="nav-header">Users Section</li>
+          <li class="nav-item <?php if(Request::segment(2) == "users" || Request::segment(2) == "user"){ ?> menu-is-opening menu-open <?php } ?>">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Manage Users
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('admin/users')}}" class="nav-link <?php if(Request::segment(2) == "users"){ ?> active <?php } ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Users list</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+
           <li class="nav-header">Inquiries Section</li>
-          
           <li class="nav-item<?php if(Request::segment(2) == "show-inquiries"){ ?> menu-is-opening menu-open <?php } ?>">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-folder-open"></i>
