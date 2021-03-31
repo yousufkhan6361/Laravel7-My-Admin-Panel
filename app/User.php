@@ -10,10 +10,10 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    public function setPasswordAttribute($value)
-    {
-        $this->attributes['password'] = bcrypt($value);
-    }
+    // public function setPasswordAttribute($value)
+    // {
+    //     $this->attributes['password'] = bcrypt($value);
+    // }
 
   
     protected $fillable = [

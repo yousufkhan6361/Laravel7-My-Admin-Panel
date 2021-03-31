@@ -33,11 +33,6 @@ Route::get('test', 'PageController@index');
 
 
 
-
-
-
-
-
 // Routes For Admin 
 Route::group(['prefix' => 'admin'], function () {
 

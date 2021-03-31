@@ -18,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
+     * 
      * Bootstrap any application services.
      *
      * @return void
@@ -25,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(Request $request)
     {
 
-    // Code starts for separate admin and front
+        // Code starts for separate admin and front
         $path_array = $request->segments();
         //dd($path_array);
         $admin_route = config('app.admin_route');
@@ -34,7 +35,6 @@ class AppServiceProvider extends ServiceProvider
         if (in_array($admin_route, $path_array)) {
             config(['app.app_scope' => 'admin']); 
         }
-
 
         $app_scope = config('app.app_scope');
 
@@ -47,8 +47,6 @@ class AppServiceProvider extends ServiceProvider
 
         view()->addLocation($path);
     // Code ends for separate admin and front
-
-
     
     }
 }
