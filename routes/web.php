@@ -40,6 +40,9 @@ Route::group(['prefix' => 'admin'], function () {
 	// 	return view('dashboard');
 	// });
 
+Route::get('', 'DashboardController@initContent');
+Route::get('dashboard', 'DashboardController@initContent'); //This will resoluve AdminControllers\DashboardController file
+
 //Banner section routes
 Route::get('slider','BannerController@index');
 Route::get('add-slider','BannerController@show');
@@ -56,8 +59,7 @@ Route::get('banner/edit/{id}',['as'=>'banner.edit','uses'=>'InnerBannerControlle
 Route::post('banner-update/{id}' , ['as' => 'banner.update' , 'uses' => 'InnerBannerController@update']);
 Route::get('banner/delete/{id}' , ['as' => 'banner.delete' , 'uses' => 'InnerBannerController@destroy']);
 
-Route::get('', 'DashboardController@initContent');
-Route::get('dashboard', 'DashboardController@initContent'); //This will resoluve AdminControllers\DashboardController file
+
 Route::get('logo', 'LogoController@addlogo');
 Route::post('logo/upload', 'LogoController@update_logo')->name('logo.upload');
 
