@@ -9,6 +9,13 @@ use Session;
 
 class InquiryController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
+    
     public function showInquiries(){
 
         $inquiries = Inquiry::all();

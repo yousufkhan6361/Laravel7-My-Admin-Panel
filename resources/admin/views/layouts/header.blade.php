@@ -15,6 +15,12 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
+
+    <div class="btn btn-default pull-right">
+                      <a href="{{ route('admin.logout') }}"">
+                          Logout
+                      </a>
+                </div>
       <!-- Navbar Search -->
 
        <!--

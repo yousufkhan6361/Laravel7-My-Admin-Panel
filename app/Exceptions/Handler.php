@@ -2,8 +2,22 @@
 
 namespace App\Exceptions;
 
+use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Illuminate\Auth\AuthenticationException;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Illuminate\Database\QueryException;
+
+
+
+//use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+
 
 class Handler extends ExceptionHandler
 {
@@ -39,6 +53,27 @@ class Handler extends ExceptionHandler
         parent::report($exception);
     }
 
+
+    /**
+     * Convert an authentication exception into a response.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Auth\AuthenticationException  $exception
+     * @return \Illuminate\Http\Response
+     */
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        if( $request->expectsJson() ) {
+            return response()->json(['message' => $exception->getMessage()], 401);
+        }
+
+        if( in_array('admin', $exception->guards() ) ){
+            return redirect()->guest(route('admin.login'));
+        }
+
+        return redirect()->guest(route('login'));
+    }
+
     /**
      * Render an exception into an HTTP response.
      *
@@ -52,4 +87,6 @@ class Handler extends ExceptionHandler
     {
         return parent::render($request, $exception);
     }
+
+    
 }

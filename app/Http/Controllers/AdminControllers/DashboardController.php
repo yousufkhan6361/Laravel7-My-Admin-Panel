@@ -12,8 +12,13 @@ use DB;
 
 class DashboardController extends Controller
 {
-    public function initContent(){
 
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
+    public function initContent(){
 
         $users = User::all();
         $totalUsers = count($users);

@@ -10,9 +10,11 @@ use Session;
 
 class HomePageController extends Controller
 {
-    // public $image1;
-    // public $image2;
-    // public $videourl;
+
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
 
      public $imageName = '';
      public $imageName2 = '';

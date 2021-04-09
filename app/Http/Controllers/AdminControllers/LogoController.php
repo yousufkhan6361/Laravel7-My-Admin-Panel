@@ -10,14 +10,15 @@ use App\Logo;
 class LogoController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
+    
     public function addlogo(){
-
         $logoImage = Logo::all('image');
-
-        //dd($logoImage);
-       
     	return view('logo',compact('logoImage'));
-
     }
     
 

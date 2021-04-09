@@ -40,7 +40,16 @@ Route::group(['prefix' => 'admin'], function () {
 	// 	return view('dashboard');
 	// });
 
-Route::get('', 'DashboardController@initContent');
+
+// Admin Auth Routes
+Route::get('admin-login', 'Auth\LoginController@ShowLoginForm')->name('admin.login');
+Route::get('', 'Auth\LoginController@ShowLoginForm')->name('admin.login');
+Route::post('admin-login', 'Auth\LoginController@login')->name('admin.login');
+Route::get('logout', 'Auth\LoginController@logout')->name( 'admin.logout' );
+
+
+
+//Route::get('', 'DashboardController@initContent');
 Route::get('dashboard', 'DashboardController@initContent'); //This will resoluve AdminControllers\DashboardController file
 
 //Banner section routes
