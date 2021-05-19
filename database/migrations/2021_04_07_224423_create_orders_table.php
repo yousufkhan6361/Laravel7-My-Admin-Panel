@@ -18,26 +18,33 @@ class CreateOrdersTable extends Migration
 
             $table->string('order_number');
             $table->unsignedBigInteger('user_id');
-            $table->enum('status', ['pending','processing','completed','decline'])->default('pending');
+            $table->unsignedBigInteger('package_id');
+            $table->string('package_name')->nullable();
+            $table->string('package_price')->nullable();
+            $table->enum('payment_status', ['pending','processing','completed','decline'])->default('pending');
+            $table->enum('status')->default(false);
             $table->float('grand_total');
             $table->integer('item_count');
             $table->boolean('is_paid')->default(false);
             $table->enum('payment_method', ['cash_on_delivery', 'paypal','stripe','card'])->default('cash_on_delivery');
 
-            $table->string('shipping_fullname');
-            $table->string('shipping_address');
-            $table->string('shipping_city');
-            $table->string('shipping_state');
-            $table->string('shipping_zipcode');
-            $table->string('shipping_phone');
+            $table->string('billing_fullname')->nullable();
+            $table->string('billing_email')->nullable();
+            $table->string('billing_address')->nullable();
+            $table->string('billing_city')->nullable();
+            $table->string('billing_state')->nullable();
+            $table->string('billing_zipcode')->nullable();
+            $table->string('billing_phone')->nullable();
+
+            $table->string('shipping_fullname')->nullable();
+            $table->string('shipping_address')->nullable();
+            $table->string('shipping_city')->nullable();
+            $table->string('shipping_state')->nullable();
+            $table->string('shipping_zipcode')->nullable();
+            $table->string('shipping_phone')->nullable();
             $table->string('notes')->nullable();
 
-            $table->string('billing_fullname');
-            $table->string('billing_address');
-            $table->string('billing_city');
-            $table->string('billing_state');
-            $table->string('billing_zipcode');
-            $table->string('billing_phone');
+
 
             $table->timestamps();
         });

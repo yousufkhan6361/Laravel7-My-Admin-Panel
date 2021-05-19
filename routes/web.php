@@ -129,6 +129,15 @@ Route::post('package-update/{id}' , ['as' => 'package.update' , 'uses' => 'Packa
 Route::get('package/delete/{id}' , ['as' => 'package.delete' , 'uses' => 'PackageController@destroy']);
 
 
+// Order section routes
+Route::get('order','OrderController@index');
+// Route::get('add-category','CategoryController@show');
+// Route::post("create-category","CategoryController@create")->name('create.category');
+Route::get('order/edit/{id}',['as'=>'order.edit', 'uses'=>'OrderController@edit']);
+Route::get('order/show/{id}',['as'=>'order.show', 'uses'=>'OrderController@show']);
+// Route::post('category-update/{id}' , ['as' => 'category.update' , 'uses' => 'CategoryController@update']);
+Route::get('order/delete/{id}' , ['as' => 'order.delete' , 'uses' => 'OrderController@destroy']);
+
 // Inquiry and newsletter section routes
 Route::get('show-inquiries','InquiryController@showInquiries');
 Route::get('delete/inquiry/{id}',['as'=>'delete.inquiry', 'uses'=>'InquiryController@destroy']);

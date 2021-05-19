@@ -155,6 +155,26 @@
             </ul>
           </li>
 
+          <li class="nav-header">Order Section</li>
+          <li class="nav-item<?php if(Request::segment(2) == "order" || Request::segment(2) == "order" ){ ?> menu-is-opening menu-open <?php } ?>">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-folder-open"></i>
+              <p>
+                Manage Orders
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('admin/order')}}" class="nav-link <?php if(Request::segment(2) == "order" || Request::segment(2) == "order"){ ?> active <?php } ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Order list</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+
           <li class="nav-header">Users Section</li>
           <li class="nav-item <?php if(Request::segment(2) == "users" || Request::segment(2) == "user"){ ?> menu-is-opening menu-open <?php } ?>">
             <a href="#" class="nav-link">
