@@ -119,6 +119,16 @@ Route::get('show-gallery/{id}',['as'=>'show.gallery', 'uses'=> 'ProductControlle
 Route::post('upload-images','ProductController@storeImages')->name('upload.images');
 Route::get('gallery/delete/{id}' , ['as' => 'gallery.delete' , 'uses' => 'ProductController@galleryDestroy']);
 
+
+// Packages section routes
+Route::get('packages','PackageController@index');
+Route::get('add-package','PackageController@create');
+Route::post('packagestore','PackageController@store')->name('package.store');
+Route::get('package/edit/{id}',['as'=>'package.edit','uses'=>'PackageController@edit']);
+Route::post('package-update/{id}' , ['as' => 'package.update' , 'uses' => 'PackageController@update']);
+Route::get('package/delete/{id}' , ['as' => 'package.delete' , 'uses' => 'PackageController@destroy']);
+
+
 // Inquiry and newsletter section routes
 Route::get('show-inquiries','InquiryController@showInquiries');
 Route::get('delete/inquiry/{id}',['as'=>'delete.inquiry', 'uses'=>'InquiryController@destroy']);

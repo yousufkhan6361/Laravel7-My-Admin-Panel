@@ -108,6 +108,27 @@
             </ul>
           </li>
 
+
+          <li class="nav-header">Packages Section</li>
+          <li class="nav-item<?php if(Request::segment(2) == "packages" || Request::segment(2) == "add-package" || Request::segment(2) == "package"){ ?> menu-is-opening menu-open <?php } ?>">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-folder-open"></i>
+              <p>
+                Manage Packages
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('admin/packages')}}" class="nav-link <?php if(Request::segment(2) == "packages" || Request::segment(2) == "add-package" || Request::segment(2) == "package"){ ?> active <?php } ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Packages list</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+
           <li class="nav-header">Product Section</li>
           <li class="nav-item <?php if(Request::segment(2) == "product" || Request::segment(2) == "add-product" || Request::segment(2) == "show-gallery" || Request::segment(2) == "category"){ ?> menu-is-opening menu-open <?php } ?>">
             <a href="#" class="nav-link">
