@@ -22,7 +22,7 @@ class CreateOrdersTable extends Migration
             $table->string('package_name')->nullable();
             $table->string('package_price')->nullable();
             $table->enum('payment_status', ['pending','processing','completed','decline'])->default('pending');
-            $table->enum('status')->default(false);
+            $table->enum('status',['0','1'])->default(0);
             $table->float('grand_total');
             $table->integer('item_count');
             $table->boolean('is_paid')->default(false);
