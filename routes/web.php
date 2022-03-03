@@ -29,10 +29,6 @@ Route::get('test', 'PageController@index');
 
 
 
-
-
-
-
 // Routes For Admin 
 Route::group(['prefix' => 'admin'], function () {
 
@@ -46,8 +42,6 @@ Route::get('admin-login', 'Auth\LoginController@ShowLoginForm')->name('admin.log
 Route::get('', 'Auth\LoginController@ShowLoginForm')->name('admin.login');
 Route::post('admin-login', 'Auth\LoginController@login')->name('admin.login');
 Route::get('logout', 'Auth\LoginController@logout')->name( 'admin.logout' );
-
-
 
 //Route::get('', 'DashboardController@initContent');
 Route::get('dashboard', 'DashboardController@initContent'); //This will resoluve AdminControllers\DashboardController file
@@ -119,7 +113,6 @@ Route::get('show-gallery/{id}',['as'=>'show.gallery', 'uses'=> 'ProductControlle
 Route::post('upload-images','ProductController@storeImages')->name('upload.images');
 Route::get('gallery/delete/{id}' , ['as' => 'gallery.delete' , 'uses' => 'ProductController@galleryDestroy']);
 
-
 // Packages section routes
 Route::get('packages','PackageController@index');
 Route::get('add-package','PackageController@create');
@@ -127,7 +120,6 @@ Route::post('packagestore','PackageController@store')->name('package.store');
 Route::get('package/edit/{id}',['as'=>'package.edit','uses'=>'PackageController@edit']);
 Route::post('package-update/{id}' , ['as' => 'package.update' , 'uses' => 'PackageController@update']);
 Route::get('package/delete/{id}' , ['as' => 'package.delete' , 'uses' => 'PackageController@destroy']);
-
 
 // Order section routes
 Route::get('order','OrderController@index');

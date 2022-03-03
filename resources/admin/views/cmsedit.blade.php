@@ -100,7 +100,7 @@
                     @if($cms->image1 != null)
                       <img style="width: 250px; height: 150px;object-fit: contain;" src="{{asset('adminTheme')}}{{$cms->imagepath}}/{{$cms->image1}}">
                     @else
-                   	  <img style="width: 250px; height: 150px;object-fit: contain;" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image">
+                   	  <img style="width: 250px; height: 150px;object-fit: contain;" src="{{asset('adminTheme/images/noimage.jpg')}}">
                      @endif
                    </div>
                     
@@ -119,7 +119,7 @@
                    	 @if($cms->image2 != null)
                       <img style="width: 250px; height: 150px;object-fit: contain;" src="{{asset('adminTheme')}}{{$cms->imagepath}}/{{$cms->image2}}">
                     @else
-                      <img style="width: 250px; height: 150px;object-fit: contain;" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image">
+                      <img style="width: 250px; height: 150px;object-fit: contain;" src="{{asset('adminTheme/images/noimage.jpg')}}">
                      @endif
                    </div>
                     

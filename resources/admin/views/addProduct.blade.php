@@ -124,7 +124,7 @@ Admin | Add Product
                   <div class="form-group">
                     <label for="exampleInputFile">Image</label>
                    <div class="form-group">
-                   	 <img style="width: 250px; height: 150px;object-fit: contain;" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image">
+                   	 <img style="width: 250px; height: 150px;object-fit: contain;" src="{{asset('adminTheme/images/noimage.jpg')}}">
                    </div>
                     
                     <div class="input-group">
@@ -139,7 +139,7 @@ Admin | Add Product
                   <!-- <div class="form-group">
                     <label for="exampleInputFile">Image 2</label>
                    <div class="form-group">
-                   	 <img style="width: 250px; height: 150px;object-fit: contain;" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image">
+                   	 <img style="width: 250px; height: 150px;object-fit: contain;" src="{{asset('adminTheme/images/noimage.jpg')}}">
                    </div>
                     
                     <div class="input-group">

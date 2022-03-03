@@ -52,7 +52,7 @@ Admin | Logo
 
                         <?php }else{ ?>
                           
-                          <img style="width: 250px; height: 150px;object-fit: contain;" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image">
+                          <img style="width: 250px; height: 150px;object-fit: contain;" src="{{asset('adminTheme/images/noimage.jpg')}}">
                         
                         <?php } ?>
                       </div>

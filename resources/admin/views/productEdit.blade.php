@@ -127,7 +127,7 @@ Admin | Add Product
                    @if($product->image != null)
                       <img style="width: 250px; height: 150px;object-fit: contain;" src="{{asset('adminTheme')}}{{$product->imagepath}}/{{$product->image}}">
                     @else
-                   	  <img style="width: 250px; height: 150px;object-fit: contain;" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image">
+                   	  <img style="width: 250px; height: 150px;object-fit: contain;" src="{{asset('adminTheme/images/noimage.jpg')}}">
                      @endif
 
                    	
@@ -145,7 +145,7 @@ Admin | Add Product
                   <!-- <div class="form-group">
                     <label for="exampleInputFile">Image 2</label>
                    <div class="form-group">
-                   	 <img style="width: 250px; height: 150px;object-fit: contain;" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image">
+                   	 <img style="width: 250px; height: 150px;object-fit: contain;" src="{{asset('adminTheme/images/noimage.jpg')}}">
                    </div>
                     
                     <div class="input-group">
